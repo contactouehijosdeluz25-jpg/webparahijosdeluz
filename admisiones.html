@@ -22,7 +22,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                     <li><a href="oferta-academica.html">Oferta Académica</a></li>
-                    <li><a href="admisiones.html">Admisiones</a></li>
+                    <li><a href="admisiones.html" class="active">Admisiones</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
@@ -33,39 +33,47 @@
     </header>
 
     <main>
-        <section class="page-header">
+        <section class="hero-section" style="background-image: url('images/hero-admissions.jpg'); height: 40vh; min-height: 300px; text-align: center;">
+            <div class="hero-bg">
+                 <img src="images/hero-admissions.jpg" alt="Imagen de fondo de la escuela">
+            </div>
             <div class="container">
-                <h1>Proceso de Admisión</h1>
-                <p>Únete a nuestra familia. Te guiamos en cada paso del camino.</p>
+                <div class="hero-content" style="padding-top: 0;">
+                    <h1 style="font-size: 3rem;">Proceso de Admisión</h1>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
                 <div class="section-title fade-in-element">
-                    <span>Nuestro Proceso</span>
-                    <h2>Admisión en 4 Sencillos Pasos</h2>
+                    <span>Bienvenido(a) a la Familia Hijos de Luz</span>
+                    <h2>Pasos para la Inscripción</h2>
                 </div>
-                <div class="admissions-process">
-                    <div class="process-step fade-in-element">
-                        <div class="step-number">1</div>
-                        <h3>Solicitud y Contacto</h3>
-                        <p>Completa nuestro formulario de contacto o llámanos para agendar una primera entrevista y recibir toda la información inicial.</p>
+                
+                <p class="fade-in-element" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Nuestro proceso de admisión está diseñado para ser claro y sencillo. Asegúrate de seguir cada paso para reservar el cupo de tu hijo(a) en el próximo año escolar.</p>
+
+                <div class="process-steps">
+                    <div class="step-card fade-in-element">
+                        <span>Paso 1</span>
+                        <h3>Solicitud de Cupo</h3>
+                        <p>Contacta a nuestra oficina de administración vía telefónica o correo electrónico para verificar la disponibilidad de cupos en el grado deseado.</p>
+                        <a href="contacto.html" class="btn btn-secondary">Contactar Administración</a>
                     </div>
-                    <div class="process-step fade-in-element">
-                        <div class="step-number">2</div>
-                        <h3>Entrevista y Evaluación</h3>
-                        <p>Realizamos una entrevista con los padres y una evaluación diagnóstica al aspirante para conocer su perfil académico y personal.</p>
+                    <div class="step-card fade-in-element">
+                        <span>Paso 2</span>
+                        <h3>Entrevista y Entrega de Recaudos</h3>
+                        <p>Una vez confirmado el cupo, se agendará una entrevista con el director y la entrega de todos los documentos requeridos.</p>
                     </div>
-                    <div class="process-step fade-in-element">
-                        <div class="step-number">3</div>
-                        <h3>Entrega de Documentos</h3>
-                        <p>Una vez aprobado el paso anterior, se procede a la consignación de todos los recaudos y documentos necesarios.</p>
+                    <div class="step-card fade-in-element">
+                        <span>Paso 3</span>
+                        <h3>Evaluación (si aplica)</h3>
+                        <p>Para Primaria y Media General, se realiza una pequeña evaluación diagnóstica (si aplica) para conocer el nivel académico del estudiante.</p>
                     </div>
-                    <div class="process-step fade-in-element">
-                        <div class="step-number">4</div>
-                        <h3>Inscripción y Bienvenida</h3>
-                        <p>Con el pago de la matrícula, se formaliza la inscripción. ¡Felicidades, ya eres parte de la familia Hijos de Luz!</p>
+                    <div class="step-card fade-in-element">
+                        <span>Paso 4</span>
+                        <h3>Formalización</h3>
+                        <p>Con la aprobación de los pasos anteriores, se realiza el pago de la matrícula y la formalización de la inscripción.</p>
                     </div>
                 </div>
             </div>
@@ -73,54 +81,31 @@
 
         <section class="section" style="background-color: var(--color-background-soft);">
             <div class="container">
-                <div class="requirements-grid">
-                    <div class="requirements-col fade-in-element">
-                        <h3>Requisitos Clave</h3>
-                        <ul>
-                            <li>✓ Partida de nacimiento del aspirante.</li>
-                            <li>✓ Copia de la cédula de identidad de los padres.</li>
-                            <li>✓ Boleta de promoción del año anterior.</li>
-                            <li>✓ Constancia de buena conducta.</li>
-                            <li>✓ Solvencia administrativa del colegio anterior.</li>
-                        </ul>
-                    </div>
-                    <div class="requirements-col fade-in-element">
-                        <h3>Fechas Importantes</h3>
-                        <p><strong>Proceso de Admisión para nuevos ingresos:</strong> Abierto desde Febrero hasta Julio.</p>
-                        <p><strong>Proceso de Reinscripción (alumnos regulares):</strong> Durante el mes de Julio.</p>
-                        <p><em>Nota: Las fechas pueden estar sujetas a cambios. Por favor, contacte a la administración para confirmar.</em></p>
-                        <a href="contacto.html" class="btn btn-primary">Contactar Administración</a>
-                    </div>
+                <div class="section-title fade-in-element">
+                    <span>Documentación</span>
+                    <h2>Requisitos Generales</h2>
+                </div>
+                <div class="fade-in-element" style="max-width: 800px; margin: 0 auto;">
+                    <p>La siguiente es una lista de los documentos básicos solicitados para todos los niveles:</p>
+                    <ul class="requirements-list">
+                        <li>Copia de Partida de Nacimiento del estudiante.</li>
+                        <li>Copia de Cédula de Identidad del estudiante (si aplica).</li>
+                        <li>Copia de Cédula de Identidad de ambos padres y/o representantes.</li>
+                        <li>Boletín de calificaciones (o informe descriptivo) del año anterior.</li>
+                        <li>Constancia de buena conducta del plantel de procedencia.</li>
+                        <li>Fotos tipo carnet (3 del estudiante y 1 de cada representante).</li>
+                        <li>Carta de solvencia (si aplica).</li>
+                    </ul>
+                    <p style="margin-top: var(--spacing-md);">Para información detallada y específica por nivel, por favor, contáctenos.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-title fade-in-element">
-                    <span>Resolvemos tus Dudas</span>
-                    <h2>Preguntas Frecuentes</h2>
-                </div>
-                <div class="faq-container">
-                    <details class="faq-item fade-in-element">
-                        <summary>¿Cuál es el horario de clases?</summary>
-                        <div class="faq-content">
-                            <p>Nuestro horario regular de clases es de 7:00 AM a 1:00 PM. Las actividades extracurriculares se realizan en el horario de la tarde.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item fade-in-element">
-                        <summary>¿Ofrecen servicio de transporte?</summary>
-                        <div class="faq-content">
-                            <p>Actualmente no contamos con un servicio de transporte propio, pero podemos proporcionar contactos de transportistas privados de confianza que trabajan con muchas familias de nuestra comunidad.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item fade-in-element">
-                        <summary>¿Qué actividades extracurriculares ofrecen?</summary>
-                        <div class="faq-content">
-                            <p>Ofrecemos una variedad de actividades que incluyen deportes (fútbol, baloncesto), artes (música, teatro) y clubes académicos (ciencias, debate). La oferta puede variar cada año escolar.</p>
-                        </div>
-                    </details>
-                </div>
+        <section class="cta-section">
+            <div class="container fade-in-element">
+                <h2>¿Tienes dudas sobre el proceso?</h2>
+                <p>Nuestro equipo de administración está listo para ayudarte con cualquier pregunta sobre cupos o recaudos.</p>
+                <a href="contacto.html" class="btn btn-secondary">Preguntar Ahora</a>
             </div>
         </section>
     </main>
@@ -177,15 +162,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
         </svg>
     </a>
-
-    <div id="video-modal" class="video-modal">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-container">
-                <iframe id="youtube-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
