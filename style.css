@@ -35,6 +35,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-headings);
   color: var(--color-primary);
   font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
@@ -97,16 +98,20 @@ a:hover { color: #E66000; }
   align-items: center;
   height: 100%;
   text-decoration: none;
-  color: var(--color-secondary); /* Color inicial del logo (blanco) */
-  transition: color var(--transition-speed);
 }
-.logo svg {
-  height: 40px; /* Ajusta esta altura según tu logo */
+.logo img {
+  height: 50px; /* Ajusta esta altura según el diseño de tu logo */
   width: auto;
+  transition: filter var(--transition-speed);
+}
+
+/* Filtro para hacer el logo blanco al inicio */
+.main-header:not(.scrolled) .logo img {
+  filter: brightness(0) invert(1);
 }
 
 .main-header.scrolled .logo {
-  color: var(--color-primary); /* Color del logo al hacer scroll (azul oscuro) */
+  /* No se necesita color aquí, la imagen toma su color natural */
 }
 .main-nav ul { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
 .main-nav a { color: var(--color-secondary); font-weight: 500; position: relative; padding: 5px 0; transition: color var(--transition-speed); }
@@ -134,7 +139,7 @@ a:hover { color: #E66000; }
 /* Hero Section */
 .hero {
   background-color: var(--color-primary);
-  background-image: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('https://placehold.co/1920x1080/0A2540/FFFFFF?text=Hero+Video+Placeholder');
+  background-image: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), url('images/15.png');
   background-size: cover;
   background-attachment: fixed; /* Esto crea el efecto parallax */
   background-position: center;
@@ -148,8 +153,17 @@ a:hover { color: #E66000; }
   min-height: 80vh;
 }
 
-.hero h1 { color: var(--color-secondary); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-.hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 2rem; opacity: 0.9; }
+.hero h1 {
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+.hero p {
+  font-size: 1.2rem; max-width: 700px; margin-bottom: 2rem; opacity: 0.9;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
 .hero .buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
 /* Secciones Generales */
