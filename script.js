@@ -6,12 +6,6 @@
 // - scroll-to-top (smooth) y mostrar/ocultar botón
 
 document.addEventListener('DOMContentLoaded', function () {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        // Oculta el preloader tan pronto como el DOM esté listo,
-        // en lugar de esperar a que todas las imágenes se carguen.
-        preloader.classList.add('hidden');
-    }
 
     const navToggle = document.querySelector('.mobile-nav-toggle');
     const primaryNav = document.getElementById('primary-navigation');
