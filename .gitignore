@@ -1,0 +1,6 @@
+# Archivos y carpetas generados por el proceso de build y dependencias
+/node_modules
+/dist
+
+# Archivos de sistema operativo
+.DS_Store
