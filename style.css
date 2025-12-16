@@ -301,7 +301,13 @@ a:hover {
 .hero-bg img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Por defecto, cubre todo el espacio */
+}
+
+/* Ajuste específico para la nueva imagen de logo */
+.hero-bg img[src*="logoinstitucional.png"] {
+    object-fit: contain; /* Evita que el logo se deforme */
+    padding: var(--spacing-xl); /* Añade un poco de aire alrededor */
 }
 
 /* Overlay oscuro para mejorar contraste */
