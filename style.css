@@ -715,21 +715,33 @@ a:hover {
 }
 
 .academic-card {
-    text-align: center;
-    padding: var(--spacing-md);
-    border: 1px solid var(--color-border);
+    /* Estilos para tarjeta con imagen de fondo */
+    position: relative;
+    min-height: 350px;
     border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-background);
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido en la parte inferior */
+    transition: transform 0.3s ease;
 }
 
-.academic-card-icon {
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-primary);
+.academic-card:hover {
+    transform: scale(1.02);
 }
 
-.academic-card-icon svg {
-    width: 60px;  /* Tamaño fijo para el ícono */
-    height: 60px; /* Tamaño fijo para el ícono */
-    margin: 0 auto; /* Centrar el ícono */
+.academic-card-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); /* Gradiente para legibilidad */
+}
+
+.academic-card h3 {
+    color: var(--color-background);
 }
 
 /* Estilos para la nueva sección de metodología en oferta-academica.html */
