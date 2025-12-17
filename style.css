@@ -129,13 +129,19 @@ a:hover {
     border-width: 0;
 }
 
-.fade-in-element {
+.fade-in-element,
+.gallery-item { /* Añadido para que los items de la galería también se animen */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
 }
 
 .fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -497,23 +503,90 @@ a:hover {
     color: var(--color-text-light);
 }
 
-/* Galería */
+/* Galería con Filtros */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-background-soft);
+    border-color: var(--color-primary);
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-color: var(--color-primary);
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 10px;
-    margin-top: var(--spacing-md);
 }
 
-.gallery-grid img {
+.gallery-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Estilos para items de video */
+.gallery-item.video-item .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 1;
+    transition: background 0.3s ease;
+}
+
+.gallery-item.video-item:hover .video-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.video-overlay .play-icon {
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.gallery-item img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gallery-grid img:hover {
+.gallery-item.hide {
+    transform: scale(0.9);
+    opacity: 0;
+    display: none;
+}
+
+.gallery-item img:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-md);
 }
@@ -848,51 +921,52 @@ a:hover {
  * 16. VIDEO MODAL
  * ==============================
  */
-.video-modal {
-    display: none; /* Oculto por defecto */
+.pip-player {
     position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-    align-items: center;
-    justify-content: center;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 320px;
+    max-width: 90vw;
+    z-index: 1100;
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    /* Animación de entrada/salida */
+    transform: translateY(100%) translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
 }
 
-.video-modal.show {
-    display: flex;
+.pip-player.show {
+    transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
 }
 
-.video-modal-content {
-    position: relative;
-    padding: var(--spacing-sm);
-    background-color: transparent;
-    max-width: 80vw;
-    max-height: 80vh;
+.pip-player-header {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: #222;
+    text-align: right;
 }
 
-.video-modal-close {
-    position: absolute;
-    top: -30px;
-    right: 0;
+.pip-player-close {
+    background: none;
+    border: none;
     color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
+    font-size: 1.5rem;
     line-height: 1;
+    cursor: pointer;
 }
 
-.video-container {
+.pip-player .video-container {
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-.video-container iframe {
+.pip-player .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;

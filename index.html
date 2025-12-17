@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U.E. Hijos de Luz - Educación Integral y Valores</title>
+    <link rel="icon" href="images/logotipodecorativo.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- En producción, este archivo estará en dist/style.min.css -->
@@ -41,7 +42,7 @@
                     <p>Formando líderes íntegros en Valencia desde 1997. Ofrecemos un camino de crecimiento integral para Primaria y Media General.</p>
                     <div class="hero-actions">
                         <a href="admisiones.html" class="btn btn-primary">Ver Admisiones</a>
-                        <a href="#" id="video-trigger" class="btn btn-secondary video-btn" data-video-id="5TpT0xl1WW0">
+                        <a href="#" class="btn btn-secondary video-btn js-video-trigger" data-video-id="5TpT0xl1WW0">
                             ▶ Ver Video
                         </a>
                     </div>
@@ -93,31 +94,38 @@
         <section class="section gallery-section">
             <div class="container">
                 <div class="section-title fade-in-element">
-                    <span>Nuestros Espacios</span>
-                    <h2>Galería de Fotos</h2>
+                    <span>Nuestra Vida Escolar</span>
+                    <h2>Galería de Actividades</h2>
                 </div>
+
+                <!-- Botones de Filtro -->
+                <div class="gallery-filters fade-in-element">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="destacados">Eventos Destacados</button>
+                    <button class="filter-btn" data-filter="culturales">Eventos Culturales</button>
+                    <button class="filter-btn" data-filter="noticias">Más Noticias</button>
+                </div>
+
                 <div class="gallery-grid">
-                    <!-- Imágenes con Lazy Loading -->
-                    <picture>
-                        <!-- El navegador intentará cargar la versión WebP primero -->
-                        <source 
-                            type="image/webp"
-                            srcset="images/gallery/patio-400.webp 400w, images/gallery/patio-800.webp 800w"
-                            sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 33vw">
-                        <!-- Si no puede, usará la versión JPG -->
-                        <source 
-                            type="image/jpeg"
-                            srcset="images/gallery/patio-400.jpg 400w, images/gallery/patio-800.jpg 800w"
-                            sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, 33vw">
-                        <!-- La etiqueta <img> es la de respaldo final y para accesibilidad -->
-                        <img src="images/gallery/patio-800.jpg" alt="Patio de juegos de la escuela" loading="lazy" width="400" height="300">
-                    </picture>
-                    <img src="images/gallery/aula.jpg" alt="Aula de clases moderna" loading="lazy" width="400" height="300">
-                    <img src="images/gallery/laboratorio.jpg" alt="Laboratorio de ciencias" loading="lazy" width="400" height="300">
-                    <img src="images/gallery/biblioteca.jpg" alt="Biblioteca con estudiantes" loading="lazy" width="400" height="300">
-                    <img src="images/gallery/cancha.jpg" alt="Cancha deportiva" loading="lazy" width="400" height="300">
-                    <img src="images/gallery/evento.jpg" alt="Evento cultural en el auditorio" loading="lazy" width="400" height="300">
-                    <!-- El navegador solo cargará estas imágenes cuando el usuario se acerque a ellas -->
+                    <!-- Las imágenes se añadirán aquí con su categoría, por ejemplo: -->
+                    <!-- Video Item -->
+                    <div class="gallery-item video-item js-video-trigger" data-category="destacados" data-video-id="5TpT0xl1WW0">
+                        <img src="https://img.youtube.com/vi/5TpT0xl1WW0/hqdefault.jpg" alt="Video de Graduandos 2025" loading="lazy">
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                            <p>Graduandos 2025</p>
+                        </div>
+                    </div>
+                    <!-- Items de ejemplo para la galería -->
+                    <div class="gallery-item" data-category="culturales">
+                        <img src="https://placehold.co/400x300/004d99/FFFFFF?text=Eventos+Culturales" alt="Ejemplo de Evento Cultural" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="noticias">
+                        <img src="https://placehold.co/400x300/25d366/FFFFFF?text=Noticia+Importante" alt="Ejemplo de Noticia" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-category="culturales">
+                        <img src="https://placehold.co/400x300/003366/FFFFFF?text=Feria+de+Ciencias" alt="Ejemplo de Feria de Ciencias" loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,15 +191,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
         </svg>
     </a>
-
-    <div id="video-modal" class="video-modal">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-container">
-                <iframe id="youtube-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
 
     <!-- En producción, este archivo estará en dist/script.min.js -->
     <script src="script.min.js" defer></script>

@@ -19,38 +19,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   // VIDEO MODAL
-  const videoTrigger = document.getElementById('video-trigger');
-  const videoModal = document.getElementById('video-modal');
-  const videoClose = document.querySelector('.video-modal-close');
-  const youtubeIframe = document.getElementById('youtube-video');
+    function setupPipPlayer() {
+        const videoTriggers = document.querySelectorAll('.js-video-trigger');
+        let pipPlayer = null;
 
-  function openVideoModal(videoId) {
-    if (!videoModal || !youtubeIframe) return;
-    youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    videoModal.classList.add('show');
-    videoModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeVideoModal() {
-    if (!videoModal || !youtubeIframe) return;
-    youtubeIframe.src = '';
-    videoModal.classList.remove('show');
-    videoModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
+        const createPlayer = () => {
+            if (document.getElementById('pip-player')) return;
 
-  if (videoTrigger) {
-    videoTrigger.addEventListener('click', () => {
-      const id = videoTrigger.dataset.videoId;
-      if (id) openVideoModal(id);
-    });
-  }
-  if (videoClose) videoClose.addEventListener('click', closeVideoModal);
-  if (videoModal) {
-    videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) closeVideoModal();
-    });
-  }
+            const playerDiv = document.createElement('div');
+            playerDiv.id = 'pip-player';
+            playerDiv.className = 'pip-player';
+            playerDiv.innerHTML = `
+                <div class="pip-player-header">
+                    <button class="pip-player-close" aria-label="Cerrar video">&times;</button>
+                </div>
+                <div class="video-container">
+                    <iframe id="pip-youtube-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            `;
+            document.body.appendChild(playerDiv);
+
+            pipPlayer = playerDiv;
+            pipPlayer.querySelector('.pip-player-close').addEventListener('click', closePlayer);
+        };
+
+        const openPlayer = (videoId) => {
+            if (!pipPlayer) createPlayer();
+            const iframe = pipPlayer.querySelector('#pip-youtube-video');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&origin=${window.location.origin}`;
+            pipPlayer.classList.add('show');
+        };
+
+        const closePlayer = () => {
+            if (!pipPlayer) return;
+            const iframe = pipPlayer.querySelector('#pip-youtube-video');
+            iframe.src = '';
+            pipPlayer.classList.remove('show');
+        };
+
+        videoTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const videoId = trigger.dataset.videoId;
+                if (videoId) openPlayer(videoId);
+            });
+        });
+    }
+    setupPipPlayer();
 
   // COOKIE CONSENT
   const cookieBanner = document.getElementById('cookie-consent-banner');
@@ -95,11 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Accessibility: close modal with ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (videoModal && videoModal.classList.contains('show')) {
-        closeVideoModal();
-      }
-    }
+    // La lógica del modal de video se ha eliminado
   });
 
   // Optional: smooth scroll for internal anchors (if hay enlaces a #id)
@@ -120,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // FADE-IN ANIMATIONS ON SCROLL
-  const fadeInElements = document.querySelectorAll('.fade-in-element');
+  const fadeInElements = document.querySelectorAll('.fade-in-element, .gallery-item');
 
   if (fadeInElements.length > 0) {
     const observerOptions = {
@@ -151,6 +162,30 @@ document.addEventListener('DOMContentLoaded', function () {
         // Aplicar un retraso de 150ms por cada elemento
         el.style.transitionDelay = `${index * 150}ms`;
       });
+    });
+  }
+
+  // GALLERY FILTER
+  const filterContainer = document.querySelector('.gallery-filters');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  if (filterContainer && galleryItems.length > 0) {
+    filterContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('filter-btn')) {
+        // Manejar el botón activo
+        filterContainer.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+
+        const filterValue = e.target.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          if (item.dataset.category === filterValue || filterValue === 'all') {
+            item.classList.remove('hide');
+          } else {
+            item.classList.add('hide');
+          }
+        });
+      }
     });
   }
 });
