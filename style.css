@@ -392,6 +392,40 @@ a:hover {
     z-index: 0;
 }
 
+/* Estilos para el hero con tira de imágenes (sobre-nosotros.html) */
+.image-strip-hero {
+    height: 40vh;
+    min-height: 300px;
+}
+
+.image-strip-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.image-strip {
+    display: flex;
+    width: 200%; /* Ancho para dos sets de imágenes */
+    height: 100%;
+    animation: scroll-strip 40s linear infinite;
+}
+
+.image-strip img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes scroll-strip {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Se desplaza la mitad del ancho total */
+}
+
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -402,6 +436,7 @@ a:hover {
     position: relative; z-index: 1; /* Para que esté sobre el overlay */
     margin-bottom: var(--spacing-sm);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
 .hero-content p {
