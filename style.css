@@ -353,13 +353,20 @@ a:hover {
     padding: var(--spacing-xl); /* Añade un poco de aire alrededor */
 }
  
+/* Ajuste para la imagen de admisiones para que se vea completa */
+.page-header .hero-bg {
+    background-color: #333; /* Fondo oscuro para la imagen contenida */
+}
+.page-header .hero-bg img {
+    object-fit: contain; /* Asegura que toda la imagen sea visible */
+}
 /* Eliminamos el overlay oscuro que opacaba el logo */
 /* .hero-bg::after { ... } */
  
 /* Cambiamos el fondo de la sección hero para que el logo resalte */
-.hero-section {
+.hero-section#inicio { /* Solo aplica a la sección hero del index.html */
     background-color: var(--color-background-soft);
-    color: var(--color-text-dark); /* Texto oscuro para fondo claro */
+    color: var(--color-text-dark);
 }
 
 /* Estilo para los encabezados de las páginas internas */
