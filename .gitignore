@@ -1,6 +1,11 @@
-# Archivos y carpetas generados por el proceso de build y dependencias
+# Directorios de dependencias de Node
 /node_modules
-/dist
 
-# Archivos de sistema operativo
+# Directorios de salida (si tus scripts de Node.js generan archivos aqui)
+/dist
+/build
+
+# Archivos de logs y cache del sistema
+npm-debug.log*
+yarn-debug.log*
 .DS_Store
