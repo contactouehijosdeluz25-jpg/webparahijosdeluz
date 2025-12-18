@@ -12,24 +12,34 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
 
-            fetch('/', {
+            // Enviar al action del formulario si está definido, si no a '/'
+            const target = contactForm.getAttribute('action') || '/';
+
+            fetch(target, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
+                body: new URLSearchParams(formData).toString(),
+                credentials: 'same-origin'
             })
-            .then(response => {
+            .then(async response => {
+                const text = await response.text().catch(() => '');
+                console.log('Form submit response status:', response.status);
+                console.log('Form submit response body:', text.slice(0, 1000));
                 if (response.ok) {
                     contactForm.reset();
                     formStatus.textContent = '¡Gracias por tu mensaje! Ha sido enviado correctamente.';
                     formStatus.className = 'success';
                 } else {
-                    throw new Error('Hubo un problema con el envío del formulario.');
+                    // Mostrar mensaje más informativo y dejar registro en consola
+                    formStatus.textContent = 'Error al enviar el formulario (estado ' + response.status + '). Ver consola para más detalles.';
+                    formStatus.className = 'error';
+                    throw new Error('Form submission failed: ' + response.status);
                 }
             })
             .catch(error => {
                 formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
                 formStatus.className = 'error';
-                console.error('Error:', error);
+                console.error('Error sending form:', error);
             })
             .finally(() => {
                 submitBtn.disabled = false;
