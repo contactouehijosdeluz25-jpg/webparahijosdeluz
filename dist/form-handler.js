@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Form submit response status:', response.status);
                 console.log('Form submit response body:', text.slice(0, 1000));
                 if (response.ok) {
+                    // Redirigir a la página de agradecimiento para comportarse como envío normal
+                    try { window.location.href = '/gracias'; } catch(e) { /* fallback */ }
                     contactForm.reset();
                     formStatus.textContent = '¡Gracias por tu mensaje! Ha sido enviado correctamente.';
                     formStatus.className = 'success';
