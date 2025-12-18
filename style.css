@@ -127,6 +127,16 @@ a:hover {
     letter-spacing: 2px;
 }
 
+.section-title--left {
+    text-align: left;
+    margin-bottom: var(--spacing-sm);
+}
+
+.text--centered {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
 /* Estilo de foco personalizado para mejorar la accesibilidad */
 :focus-visible {
     outline: 3px solid var(--color-primary-light);
@@ -488,6 +498,11 @@ a:hover {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
+.hero-content .hero-sub-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
 .hero-content p {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-lg);
@@ -625,6 +640,10 @@ a:hover {
 
 .vision-card h3, .mission-card h3 {
     color: var(--color-primary-dark);
+}
+
+.mission-vision-grid p {
+    text-align: left; /* Alinea el texto a la izquierda dentro de las tarjetas */
 }
 
 /* Equipo Directivo */
@@ -849,6 +868,11 @@ a:hover {
     border-radius: 8px;
     box-shadow: var(--shadow-md);
 }
+.contact-map__iframe {
+    border: 0;
+    width: 100%;
+    height: 450px;
+}
 
 /*
  * ==============================
@@ -898,15 +922,6 @@ a:hover {
     color: var(--color-background);
 }
 
-/* Imágenes de fondo para las tarjetas de niveles académicos */
-.academic-card--primaria {
-    background-image: url('../images/2.jpeg');
-}
-
-.academic-card--media {
-    background-image: url('../images/yohangel.png');
-}
-
 /* Estilos para la nueva sección de metodología en oferta-academica.html */
 .method-grid {
     display: grid;
@@ -942,15 +957,6 @@ a:hover {
     color: var(--color-background);
 }
 
-/* Imágenes de fondo para las tarjetas de metodología */
-.method-card--humanista {
-    background-image: url('../images/educacionhumanista.png');
-}
-
-.method-card--academico {
-    background-image: url('../images/altonivelacademico.png');
-}
-
 .step-card {
     padding: var(--spacing-md);
     border: 1px solid var(--color-primary-light);
@@ -977,6 +983,11 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+.centered-content-block {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /*
  * ==============================
  * 12. CONTACTO (contacto.html)
