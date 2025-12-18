@@ -13,6 +13,7 @@
 
     <!-- En producción, este archivo estará en dist/style.min.css -->
     <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="override.css">
 </head>
 <body>
 <header class="main-header">
@@ -57,23 +58,23 @@
                         
                         <h3>Información de Contacto</h3>
                         <p>📞 <a href="tel:+584162473349">+58 416-2473349</a></p>
-                        <p>📧 <a href="mailto:uehijosdeluz@gmail.com">uehijosdeluz@gmail.com</a></p>
+                        <p>📧 <a href="mailto:contactouehijosdeluz2025@gmail.com">contactouehijosdeluz2025@gmail.com</a></p>
 
                         <h3>Horario de Atención</h3>
                         <p>⏰ Lunes a Viernes: 7:00 AM - 5:00 PM (Administración).</p>
 
                         <div class="social-links">
-                            <a href="https://www.instagram.com/u.ehijosdeluz/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                            <a href="https://www.facebook.com/unidadeducativa.hijosdeluz/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a href="https://www.instagram.com/unidadeducativahijosdeluz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://www.facebook.com/unidadeducativa.hijosdeluz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
                         </div>
 
                         <h3 class="form-title">O envíanos un mensaje</h3>
-                        <form id="contact-form" name="contacto" method="POST" data-netlify="true" class="fade-in-element">
+                        <form id="contact-form" name="contacto" method="POST" action="/gracias" data-netlify="true" data-netlify-honeypot="gotcha" class="fade-in-element">
                              <input type="hidden" name="form-name" value="contacto" />
 
-                             <div class="form-group honeypot" style="display:none;">
+                             <div class="form-group honeypot">
                                  <label for="gotcha">No llenar este campo</label>
-                                 <input type="text" id="gotcha" name="_gotcha" autocomplete="off" tabindex="-1">
+                                 <input type="text" id="gotcha" name="gotcha" autocomplete="off" tabindex="-1">
                              </div>
 
                              <div class="form-group">
@@ -104,7 +105,7 @@
                     <div class="contact-map fade-in-element">
                         <iframe class="contact-map__iframe" title="Ubicación de la institución"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2204.2122214198603!2d-67.92595094175671!3d10.143229909196364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8068f17aa00515%3A0xd401090e9de733ae!2sIglesia%20Evangelica%20Estrella%20Resplandeciente!5e0!3m2!1ses!2sve!4v1765775706868!5m2!1ses!2sve"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer">
                         </iframe>
                     </div>
                 </div>
@@ -123,7 +124,7 @@
                 <div class="footer-col">
                     <h4>Contacto Rápido</h4>
                     <p>📞 <a href="tel:+584162473349">+58 416-2473349</a></p>
-                    <p>📧 <a href="mailto:contactouehijosdeluz25@gmail.com">contactouehijosdeluz25@gmail.com</a></p>
+                    <p>📧 <a href="mailto:contactouehijosdeluz2025@gmail.com">contactouehijosdeluz2025@gmail.com</a></p>
                     <p>⏰ L-V: 7:00 AM - 5:00 PM</p>
                 </div>
                 <div class="footer-col">
@@ -167,5 +168,6 @@
 
     <!-- En producción, este archivo estará en dist/script.min.js -->
     <script src="script.min.js" defer></script>
+    <script src="form-handler.js" defer></script>
 </body>
 </html>

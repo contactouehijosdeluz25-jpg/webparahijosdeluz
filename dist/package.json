@@ -1,0 +1,15 @@
+{
+  "name": "hijos-de-luz-website-dist",
+  "version": "1.0.0",
+  "description": "Distribución estática (carpeta dist) lista para servir",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server ./ -p 8080",
+    "preview": "python3 -m http.server 8080",
+    "dev": "npx live-server ./ --port=8080 --open=admisiones.html",
+    "build": "echo \"No build required inside dist. Use the source repo to rebuild.\""
+  },
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
+}

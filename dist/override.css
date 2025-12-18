@@ -1,0 +1,32 @@
+:root{
+  /* Opción 1 - Azul corporativo */
+  --color-primary: #0b5ed7;
+  --color-primary-dark: #083e9e;
+  --color-primary-light: #3b82f6;
+  --color-text-dark: #1f2937;
+  --color-text-light: #555555;
+  --color-background: #f7f9fb;
+  --color-background-soft: #eef4fb;
+  --color-border: #dbeaf8;
+}
+
+/* Estilos específicos para botón 'Acto de Graduación 2025' */
+.btn-graduation{
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-background) !important;
+  box-shadow: 0 4px 10px rgba(11,94,215,0.12);
+}
+.btn-graduation:hover,
+.btn-graduation:focus{
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  color: var(--color-background) !important;
+}
+.btn-graduation i{margin-right:8px}
+
+/* Centrar el título dentro de la sección about-intro-grid */
+.about-intro-grid h3{ text-align: center; }
+
+/* Revertido: mantener posición original del contenido hero */
+
