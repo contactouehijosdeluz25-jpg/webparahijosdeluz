@@ -57,3 +57,18 @@
   }
 }
 
+  /* Estilos para la galería */
+  .gallery-row { margin: 2.5rem 0; }
+  .gallery-row-title { margin-bottom: .75rem; color: var(--color-primary); font-weight:700; }
+  .scroll-track { display:flex; gap:1rem; overflow:hidden; align-items:center; padding:0.5rem 0; }
+  .scroll-track img { height:180px; width:auto; border-radius:8px; object-fit:cover; box-shadow:0 6px 18px rgba(31,41,55,0.08); cursor:pointer; }
+
+  @media (max-width:768px){
+    .scroll-track img { height:140px; }
+  }
+
+  /* En móviles permitir desplazamiento manual visible */
+  @media (max-width:576px){
+    .scroll-track { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  }
+
