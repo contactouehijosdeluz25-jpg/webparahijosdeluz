@@ -79,6 +79,11 @@ main {
     padding: var(--spacing-xl) 0;
 }
 
+/* Modificador para secciones con fondo suave */
+.section--soft-bg {
+    background-color: var(--color-background-soft);
+}
+
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
@@ -427,6 +432,14 @@ a:hover {
     justify-content: flex-end; /* Alinea horizontalmente a la derecha */
     text-align: right;
     padding-bottom: var(--spacing-md); /* Añade un poco de espacio inferior */
+}
+
+/* Modificador para alinear el contenido del header a la derecha y arriba */
+.page-header--align-top-right {
+    align-items: flex-start; /* Alinea verticalmente arriba */
+    justify-content: flex-end; /* Alinea horizontalmente a la derecha */
+    text-align: right;
+    padding-top: var(--spacing-md); /* Añade un poco de espacio superior */
 }
 
 /* Estilos para el hero con tira de imágenes (sobre-nosotros.html) */
@@ -885,6 +898,15 @@ a:hover {
     color: var(--color-background);
 }
 
+/* Imágenes de fondo para las tarjetas de niveles académicos */
+.academic-card--primaria {
+    background-image: url('../images/2.jpeg');
+}
+
+.academic-card--media {
+    background-image: url('../images/yohangel.png');
+}
+
 /* Estilos para la nueva sección de metodología en oferta-academica.html */
 .method-grid {
     display: grid;
@@ -918,6 +940,15 @@ a:hover {
 
 .method-card h3 {
     color: var(--color-background);
+}
+
+/* Imágenes de fondo para las tarjetas de metodología */
+.method-card--humanista {
+    background-image: url('../images/educacionhumanista.png');
+}
+
+.method-card--academico {
+    background-image: url('../images/altonivelacademico.png');
 }
 
 .step-card {
