@@ -6,9 +6,9 @@ const path = require('path');
 // --- Configuración ---
 const config = {
   // Patrón para encontrar las imágenes originales
-  sourcePattern: 'src/assets/images/src/**/*.{jpg,jpeg,png}',
+  sourcePattern: 'images/src/**/*.{jpg,jpeg,png}',
   // Carpeta de destino para las imágenes procesadas
-  outputDir: 'src/assets/images/gallery', // Procesamos dentro de src/assets/images
+  outputDir: 'images/gallery',
   // Anchos a los que se redimensionarán las imágenes para `srcset`
   widths: [400, 800],
   // Opciones de calidad para los formatos
