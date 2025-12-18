@@ -68,33 +68,35 @@
                         </div>
 
                         <h3 class="form-title">O envíanos un mensaje</h3>
-                        <form id="contact-form" action="https://formspree.io/f/ID_TEMPORAL_REEMPLAZAR_LUEGO" method="POST" class="fade-in-element">
-                            <div class="form-group honeypot">
-                                <label for="gotcha">No llenar este campo</label>
-                                <input type="text" id="gotcha" name="_gotcha" autocomplete="off" tabindex="-1">
-                            </div>
+                        <form id="contact-form" name="contacto" method="POST" data-netlify="true" class="fade-in-element">
+                             <input type="hidden" name="form-name" value="contacto" />
 
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" name="name" required minlength="3" aria-describedby="name-error">
-                                <small id="name-error" class="error-message" role="alert"></small>
-                            </div>
+                             <div class="form-group honeypot" style="display:none;">
+                                 <label for="gotcha">No llenar este campo</label>
+                                 <input type="text" id="gotcha" name="_gotcha" autocomplete="off" tabindex="-1">
+                             </div>
+
+                             <div class="form-group">
+                                 <label for="name">Nombre Completo</label>
+                                 <input type="text" id="name" name="nombre" required minlength="3">
+                             </div>
+    
                             <div class="form-group">
                                 <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" name="email" required aria-describedby="email-error">
-                                <small id="email-error" class="error-message" role="alert"></small>
+                                <input type="email" id="email" name="email" required>
                             </div>
+    
                             <div class="form-group">
                                 <label for="subject">Asunto</label>
-                                <input type="text" id="subject" name="subject" required aria-describedby="subject-error">
-                                <small id="subject-error" class="error-message" role="alert"></small>
+                                <input type="text" id="subject" name="asunto" required>
                             </div>
+    
                             <div class="form-group">
                                 <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
-                                <small id="message-error" class="error-message" role="alert"></small>
+                                <textarea id="message" name="mensaje" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="submit-btn">Enviar Mensaje</button>
+    
+                                <button type="submit" class="btn btn-primary" id="submit-btn">Enviar Mensaje</button>
                         </form>
                         <p id="form-status"></p>
                     </div>
@@ -121,7 +123,7 @@
                 <div class="footer-col">
                     <h4>Contacto Rápido</h4>
                     <p>📞 <a href="tel:+584162473349">+58 416-2473349</a></p>
-                    <p>📧 <a href="mailto:uehijosdeluz@gmail.com">uehijosdeluz@gmail.com</a></p>
+                    <p>📧 <a href="mailto:contactouehijosdeluz25@gmail.com">contactouehijosdeluz25@gmail.com</a></p>
                     <p>⏰ L-V: 7:00 AM - 5:00 PM</p>
                 </div>
                 <div class="footer-col">
