@@ -128,16 +128,22 @@
                         </div>
                     </div>
                     <div id="reel-culturales" class="gallery-reel">
+                        <!--
+                            ⚡ Bolt: Performance Optimization
+                            - What: Added native lazy loading to gallery images.
+                            - Why: Prevents off-screen images from being loaded during the initial page load, which speeds up the Largest Contentful Paint (LCP) and reduces initial bandwidth consumption.
+                            - Impact: Faster initial page load, especially on slower connections. Images will only load as the user scrolls them into the viewport.
+                        -->
                         <div class="reel-track">
-                            <div class="gallery-item"><img src="images/gallery/19-800w.jpg" alt="Evento cultural 1"></div>
-                            <div class="gallery-item"><img src="images/gallery/3-800w.jpg" alt="Evento cultural 2"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural1-800w.jpg" alt="Evento cultural 3"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural2-800w.jpg" alt="Evento cultural 4"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural3-800w.jpg" alt="Evento cultural 5"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural4-800w.jpg" alt="Evento cultural 6"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural5-800w.jpg" alt="Evento cultural 7"></div>
-                            <div class="gallery-item"><img src="images/gallery/cultural6-800w.jpg" alt="Evento cultural 8"></div>
-                            <div class="gallery-item"><img src="images/gallery/eventosculturales-800w.jpg" alt="Evento cultural 9"></div>
+                            <div class="gallery-item"><img src="images/gallery/19-800w.jpg" alt="Evento cultural 1" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/3-800w.jpg" alt="Evento cultural 2" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural1-800w.jpg" alt="Evento cultural 3" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural2-800w.jpg" alt="Evento cultural 4" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural3-800w.jpg" alt="Evento cultural 5" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural4-800w.jpg" alt="Evento cultural 6" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural5-800w.jpg" alt="Evento cultural 7" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/cultural6-800w.jpg" alt="Evento cultural 8" loading="lazy" decoding="async"></div>
+                            <div class="gallery-item"><img src="images/gallery/eventosculturales-800w.jpg" alt="Evento cultural 9" loading="lazy" decoding="async"></div>
                         </div>
                         <p class="text-center text-muted mt-2 small"><i class="fa-solid fa-arrows-left-right"></i> Desliza para ver más</p>
                     </div>
