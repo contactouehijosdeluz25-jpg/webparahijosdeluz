@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admisiones - U.E. Hijos de Luz</title>
+    <title>Sobre Nosotros - U.E. Hijos de Luz</title>
     <link rel="icon" href="images/logotipodecorativo.png" type="image/png">
 
     <!-- Google Fonts: Poppins (Títulos) y Open Sans (Cuerpo) -->
@@ -26,9 +26,9 @@
             <nav class="main-nav" id="primary-navigation">
                 <ul class="nav-list">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="sobre-nosotros.html" class="active">Sobre Nosotros</a></li>
                     <li><a href="oferta-academica.html">Oferta Académica</a></li>
-                    <li><a href="admisiones.html" class="active">Admisiones</a></li>
+                    <li><a href="admisiones.html">Admisiones</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
@@ -36,79 +36,85 @@
     </header>
 
     <main>
-        <section class="hero-section page-header page-header--admissions">
-            <div class="hero-bg">
-                 <img src="images/Picture1.png" alt="Inscripciones abiertas en Hijos de Luz">
+        <section class="hero-section page-header image-strip-hero">
+            <div class="image-strip-container">
+                <div class="image-strip">
+                    <!-- Imágenes duplicadas para un bucle infinito y suave -->
+                    <img src="images/vidaescolar1.png" alt="Vida escolar en Hijos de Luz">
+                    <img src="images/promobachilleres2025.png" alt="Promoción de bachilleres 2025">
+                    <img src="images/17.jpeg" alt="Estudiantes en actividad">
+                    <img src="images/11.jpeg" alt="Evento escolar">
+                    <img src="images/17.png" alt="Estudiantes en el patio">
+                    <img src="images/profesores.png" alt="Equipo de profesores">
+                    <!-- Segunda copia de las imágenes -->
+                    <img src="images/vidaescolar1.png" alt="Vida escolar en Hijos de Luz">
+                    <img src="images/promobachilleres2025.png" alt="Promoción de bachilleres 2025">
+                </div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1>Proceso de Admisión</h1>
+                    <h1>Nuestra Historia y Misión</h1>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="section-title fade-in-element">
-                    <span>Bienvenido(a) a la Familia Hijos de Luz</span>
-                    <h2>Pasos para la Inscripción</h2>
+                <div class="about-intro-grid">
+                    <div class="fade-in-element">
+                        <img src="images/promodeprimaria.png" alt="Foto de promoción de primaria de Hijos de Luz">
+                    </div>
+                    <div class="fade-in-element">
+                        <div class="section-title" style="text-align: left; margin-bottom: var(--spacing-sm);">
+                             <span>Educando desde 1997</span>
+                            <h2>Una Sólida Trayectoria</h2>
+                        </div>
+                        <p>La Unidad Educativa Hijos de Luz nació en 1997 con la firme visión de ofrecer una educación que combine el rigor académico con una profunda formación en valores cristianos. Desde entonces, hemos crecido de la mano de nuestra comunidad, adaptando nuestra pedagogía a las necesidades del mundo moderno sin perder de vista nuestra esencia humanista.</p>
+                        <p>Somos una institución dedicada a formar ciudadanos íntegros, conscientes y preparados para enfrentar cualquier reto futuro, basando nuestro modelo en el amor, el respeto y la excelencia.</p>
+                    </div>
                 </div>
-                
-                <p class="fade-in-element centered-text-block">Nuestro proceso de admisión está diseñado para ser claro y sencillo. Asegúrate de seguir cada paso para reservar el cupo de tu hijo(a) en el próximo año escolar.</p>
 
-                <div class="process-steps">
-                    <div class="step-card fade-in-element">
-                        <span>Paso 1</span>
-                        <h3>Solicitud de Cupo</h3>
-                        <p>Contacta a nuestra oficina de administración vía telefónica o correo electrónico para verificar la disponibilidad de cupos en el grado deseado.</p>
-                        <a href="contacto.html" class="btn btn-secondary">Contactar Administración</a>
+                <div class="mission-vision-grid fade-in-element">
+                    <div class="mission-card">
+                        <h3>Misión</h3>
+                        <p>Proveer una educación integral y de calidad, fundamentada en principios éticos y cristianos, que desarrolle las capacidades intelectuales, emocionales y sociales del estudiante, preparándolo para ser un agente de cambio positivo en la sociedad.</p>
                     </div>
-                    <div class="step-card fade-in-element">
-                        <span>Paso 2</span>
-                        <h3>Entrevista y Entrega de Recaudos</h3>
-                        <p>Una vez confirmado el cupo, se agendará una entrevista con el director y la entrega de todos los documentos requeridos.</p>
-                    </div>
-                    <div class="step-card fade-in-element">
-                        <span>Paso 3</span>
-                        <h3>Evaluación (si aplica)</h3>
-                        <p>Para Primaria y Media General, se realiza una pequeña evaluación diagnóstica (si aplica) para conocer el nivel académico del estudiante.</p>
-                    </div>
-                    <div class="step-card fade-in-element">
-                        <span>Paso 4</span>
-                        <h3>Formalización</h3>
-                        <p>Con la aprobación de los pasos anteriores, se realiza el pago de la matrícula y la formalización de la inscripción.</p>
+                    <div class="vision-card">
+                        <h3>Visión</h3>
+                        <p>Ser reconocidos a nivel nacional como una institución líder en excelencia académica y formación de valores, siendo un referente por la calidad humana y el éxito profesional de nuestros egresados.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section--soft-bg">
+        <section class="section" style="background-color: var(--color-background-soft);">
             <div class="container">
                 <div class="section-title fade-in-element">
-                    <span>Documentación</span>
-                    <h2>Requisitos Generales</h2>
+                    <span>Legado y Liderazgo</span>
+                    <h2>El Corazón que Guía Nuestra Misión</h2>
                 </div>
-                <div class="fade-in-element content-block--centered">
-                    <p>La siguiente es una lista de los documentos básicos solicitados para todos los niveles:</p>
-                    <ul class="requirements-list">
-                        <li>Copia de Partida de Nacimiento del estudiante.</li>
-                        <li>Copia de Cédula de Identidad del estudiante (si aplica).</li>
-                        <li>Copia de Cédula de Identidad de ambos padres y/o representantes.</li>
-                        <li>Boletín de calificaciones (o informe descriptivo) del año anterior.</li>
-                        <li>Constancia de buena conducta del plantel de procedencia.</li>
-                        <li>Fotos tipo carnet (3 del estudiante y 1 de cada representante).</li>
-                        <li>Carta de solvencia (si aplica).</li>
-                    </ul>
-                    <p class="mt-md">Para información detallada y específica por nivel, por favor, contáctenos.</p>
+                <div class="about-intro-grid">
+                    <div class="fade-in-element">
+                        <img src="images/degnyshidalgo3.png" alt="Foto de Degnys Hidalgo">
+                    </div>
+                    <div class="fade-in-element">
+                        <p>La Unidad Educativa Hijos de Luz es un proyecto cimentado en la fe y la visión de sus fundadores, el Pastor Rubén González y la Licenciada Degnys María Hidalgo de González.</p>
+                        <p>Nacida del profundo compromiso de esta pareja con los principios cristianos y la solidaridad humana, la institución ha florecido como un faro de excelencia académica y moral en la comunidad de Bucaral.</p>
+                        
+                        <h3 style="margin-top: var(--spacing-md);">Una Luz que Permanece Firme</h3>
+                        <p>Hace 17 años, la familia y la comunidad Hijos de Luz enfrentaron la dolorosa pérdida de nuestro Pastor y cofundador, Rubén González. A pesar del inmenso vacío, la Licenciada Degnys María Hidalgo de González demostró una firmeza de espíritu inquebrantable.</p>
+                        <p>Con una fe profunda y una dedicación que honra el legado de su esposo, ella ha asumido el liderazgo y la gerencia de la institución, navegando los desafíos con gracia y determinación. Su trabajo constante no solo ha mantenido viva la visión fundacional, sino que ha elevado la excelencia educativa, asegurando que cada niño sea formado bajo los mismos principios de amor, integridad y servicio.</p>
+                        <p><strong>La Licenciada Degnys es más que una gerente; es el corazón y un pilar que vela por la promesa de Hijos de Luz: Educar con valores para un futuro brillante.</strong></p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="cta-section">
             <div class="container fade-in-element">
-                <h2>¿Tienes dudas sobre el proceso?</h2>
-                <p>Nuestro equipo de administración está listo para ayudarte con cualquier pregunta sobre cupos o recaudos.</p>
-                <a href="contacto.html" class="btn btn-secondary">Preguntar Ahora</a>
+                <h2>¿Listo para Unirte a la Familia?</h2>
+                <p>Las inscripciones para el nuevo año escolar están abiertas. ¡No pierdas tu cupo!</p>
+                <a href="admisiones.html" class="btn btn-secondary">Iniciar Proceso de Admisión</a>
             </div>
         </section>
     </main>
