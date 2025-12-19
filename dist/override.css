@@ -94,4 +94,14 @@
   .like-btn .heart { color: var(--color-primary); font-size: 14px; }
   .like-btn .count { font-weight: 600; color: var(--color-text-dark); }
 
+  /* Footer socials y créditos */
+  .footer-socials { text-align:center; margin-bottom:.5rem; }
+  .footer-socials a { color: var(--color-primary); font-weight:600; margin:0 .5rem; text-decoration:none; }
+  .footer-socials .sep { color: var(--color-text-light); }
+  .site-credit { text-align:center; color:var(--color-text-dark); margin-bottom:.5rem; font-size:0.95rem; }
+
+  @media (min-width:768px){
+    .site-credit { font-size:1rem; }
+  }
+
 
