@@ -2,44 +2,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tracks = document.querySelectorAll('.scroll-track');
 
+  // Hacer todas las pistas desplazables horizontalmente; el usuario controlará el scroll
   tracks.forEach(track => {
-    // permitir scroll horizontal por touch/drag en móviles por defecto (overflow: auto)
     track.style.overflowX = 'auto';
+    track.style.WebkitOverflowScrolling = 'touch';
     track.style.scrollBehavior = 'smooth';
-
-    let interval = null;
-    const speed = parseFloat(track.dataset.speed) || 1;
-
-    const startScroll = () => {
-      if (interval) return;
-      interval = setInterval(() => {
-        // si llega al final, volver al inicio para bucle
-        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 1) {
-          track.scrollLeft = 0;
-        } else {
-          track.scrollLeft += 1 * speed;
-        }
-      }, 16); // ~60fps
-    };
-
-    const stopScroll = () => {
-      if (interval) {
-        clearInterval(interval);
-        interval = null;
-      }
-    };
-
-    track.addEventListener('mouseenter', startScroll);
-    track.addEventListener('mouseleave', stopScroll);
-    track.addEventListener('touchstart', stopScroll, {passive:true});
   });
-  
+
   // Añadir botones 'Me gusta' y envoltorio para cada imagen
   document.querySelectorAll('.scroll-track').forEach(track => {
     track.style.position = track.style.position || 'relative';
     const imgs = Array.from(track.querySelectorAll('img'));
     imgs.forEach(img => {
-      // evitar duplicar si ya está envuelto
       if (img.closest('.gallery-thumb')) return;
       const wrap = document.createElement('div');
       wrap.className = 'gallery-thumb';
@@ -49,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       img.parentNode.insertBefore(wrap, img);
       wrap.appendChild(img);
 
-      // crear botón like
       const btn = document.createElement('button');
       btn.className = 'like-btn';
       btn.setAttribute('aria-label', 'Me gusta');
@@ -68,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.style.alignItems = 'center';
       wrap.appendChild(btn);
 
-      // inicializar contador desde localStorage
       const key = 'likes:' + img.getAttribute('src');
       const saved = parseInt(localStorage.getItem(key) || '0', 10);
       btn.querySelector('.count').textContent = saved;
@@ -79,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         current = current + 1;
         localStorage.setItem(key, String(current));
         btn.querySelector('.count').textContent = current;
-        // animación simple
         btn.animate([{ transform: 'scale(1.0)' }, { transform: 'scale(1.15)' }, { transform: 'scale(1.0)' }], { duration: 200 });
       });
     });
