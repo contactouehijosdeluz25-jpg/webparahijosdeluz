@@ -88,4 +88,10 @@
   /* Hacer la pista más evidente dentro de la franja */
   .scroll-track { padding: .5rem; background: transparent; }
 
+  /* Estilos para botón Me gusta */
+  .gallery-thumb { display: inline-block; position: relative; }
+  .like-btn { backdrop-filter: blur(4px); }
+  .like-btn .heart { color: var(--color-primary); font-size: 14px; }
+  .like-btn .count { font-weight: 600; color: var(--color-text-dark); }
+
 
