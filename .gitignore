@@ -1,1 +1,15 @@
+# Dependencias
 node_modules/
+
+# Archivos de construcción (Netlify los generará por su cuenta)
+dist/
+build/
+
+# Archivos de configuración del agente e IA
+*.yaml
+*.yml
+specs/
+tests/
+
+# Datos sensibles
+.env
