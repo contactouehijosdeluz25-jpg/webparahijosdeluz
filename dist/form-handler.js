@@ -12,36 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Enviando...';
 
-            // Enviar al action del formulario si está definido, si no a '/'
-            const target = contactForm.getAttribute('action') || '/';
+            const target = contactForm.getAttribute('action');
 
             fetch(target, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString(),
-                credentials: 'same-origin'
+                body: formData, // Dejamos que el navegador decida el Content-Type automáticamente
+                headers: {
+                    'Accept': 'application/json'
+                }
             })
-            .then(async response => {
-                const text = await response.text().catch(() => '');
-                console.log('Form submit response status:', response.status);
-                console.log('Form submit response body:', text.slice(0, 1000));
+            .then(response => {
                 if (response.ok) {
-                    // Redirigir a la página de agradecimiento para comportarse como envío normal
-                    try { window.location.href = '/gracias'; } catch(e) { /* fallback */ }
                     contactForm.reset();
-                    formStatus.textContent = '¡Gracias por tu mensaje! Ha sido enviado correctamente.';
+                    formStatus.textContent = '¡Gracias! Tu mensaje ha sido enviado correctamente.';
                     formStatus.className = 'success';
                 } else {
-                    // Mostrar mensaje más informativo y dejar registro en consola
-                    formStatus.textContent = 'Error al enviar el formulario (estado ' + response.status + '). Ver consola para más detalles.';
-                    formStatus.className = 'error';
-                    throw new Error('Form submission failed: ' + response.status);
+                    return response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formStatus.textContent = "Oops! Hubo un problema al enviar el formulario.";
+                        }
+                    })
                 }
             })
             .catch(error => {
-                formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+                formStatus.textContent = 'Hubo un error al enviar el mensaje. Inténtalo de nuevo más tarde.';
                 formStatus.className = 'error';
-                console.error('Error sending form:', error);
             })
             .finally(() => {
                 submitBtn.disabled = false;
@@ -49,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 formStatus.style.display = 'block';
                 setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = '';
                 }, 6000);
             });
         });
