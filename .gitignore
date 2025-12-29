@@ -1,15 +1,20 @@
 # Dependencias
 node_modules/
 
-# Archivos de construcción (Netlify los generará por su cuenta)
-dist/
-build/
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+.vscode/
 
-# Archivos de configuración del agente e IA
+# Respaldos
+respaldo_heredado/
+*WhatsApp*
+
+# IA
 *.yaml
 *.yml
 specs/
 tests/
 
-# Datos sensibles
+# Privado
 .env
